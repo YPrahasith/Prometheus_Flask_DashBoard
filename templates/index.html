@@ -1,0 +1,21 @@
+<html>
+
+<head> Dashboard </head>
+
+<body>
+    <form action="{{ url_for("index" ) }}" method="post">
+        <label for="firstname">Panel Name:</label>
+        <input type="text" id="firstname" name="fname" placeholder="panelname">
+        <label for="lastname">Query Name:</label>
+        <input type="text" id="lastname" name="lname" placeholder="query">
+        <button type="submit">GET DATA</button>
+    </form>
+
+    {%if x%}
+    <div>
+        {{ x }}
+    </div>
+    {% endif %}
+</body>
+
+</html>
