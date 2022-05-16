@@ -8,14 +8,13 @@
         <input type="text" id="firstname" name="fname" placeholder="panelname">
         <label for="lastname">Query Name:</label>
         <input type="text" id="lastname" name="lname" placeholder="query">
-        <button type="submit">GET DATA</button>
+        <button type="submit" onclick="buffer()"> Download </button>
     </form>
-
-    {%if x%}
-    <div>
-        {{ x }}
-    </div>
-    {% endif %}
 </body>
+<script type="text/javascript">
+    function buffer(){
+        alert("Downloaded file");
+    }
+</script>
 
 </html>

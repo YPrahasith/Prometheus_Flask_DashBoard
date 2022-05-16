@@ -1,12 +1,13 @@
-import re
 from flask import Flask, request, render_template
-import requests, json
+import requests, json, csv
 
 app = Flask(__name__)
 
 @app.route('/', methods=["GET","POST"])
 def index():
     lst =[]
+    f = open('csv_file', 'w')
+    writer = csv.writer(f)
     if request.method == "POST":
         p_name = request.form.get("fname")
         q_name = request.form.get("lname")
@@ -19,4 +20,6 @@ def index():
         print(data)
         for x in b :
             lst.append(x["value"])
+            writer.writerow(x["value"])
+        f.close()
     return render_template("index.html",x=lst)
